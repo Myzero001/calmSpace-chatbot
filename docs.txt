@@ -1,0 +1,35 @@
+// แพคเกจจำเป็นของแชทบอท
+pip install cohere faiss-cpu huggingface-hub langchain-community langchain langchain-openai sentence-transformers llama-cpp-python 
+pip install -m "langchain==0.1.20" "langchain-community>=0.0.30,<0.1" "langchain-core>=0.1.52,<0.2" "langchain-text-splitters>=0.0.1,<0.1" "langsmith>=0.1.17,<0.2.0"
+pip install fastapi "uvicorn[standard]"
+
+----------------------------------------------------------------------------------------
+// วิธีเก็บ dependencies ที่เคยติดตั้งมาก่อนให้อยู่ในไฟล์เดียว เพื่อใช้ในการโยกโปรเจคได้ง่าย เรียกใช้คำสั่งตอนอยู่ .venv
+pip freeze > requirements.txt
+
+// วิธีติดตั้ง dependencies กลับมาคืน
+pip install -r requirements.txt
+
+----------------------------------------------------------------------------------------
+// รัน backend 
+uvicorn main:app --reload
+// แบบกำหนด port 
+uvicorn main:app --reload --port 8000
+
+// ---> ผลลัพธ์เมื่อรันเสร็จ
+Uvicorn running on http://127.0.0.1:8000
+----------------------------------------------------------------------------------------
+// ลบ .venv
+Remove-Item -Recurse -Force .venv
+
+// สร้าง .venv
+python -m venv .venv
+.\.venv\Scripts\activate
+
+python -m pip install --upgrade pip ****ถ้าจำเป็น
+
+// ติดตั้ง fastapi , uvicorn
+pip install fastapi uvicorn
+
+// เช็คแพ็คเกจที่ติดไป
+pip list
